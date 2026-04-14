@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import { RiNotificationSnoozeLine, RiDeleteBin6Line } from "react-icons/ri";
-import { LuArchive, LuVideo} from "react-icons/lu";
+import { LuArchive, LuVideo } from "react-icons/lu";
 import { FiPhoneCall } from "react-icons/fi";
 import { PiChatTextBold } from "react-icons/pi";
+import { FriendContext } from '../../context/FriendContext';
+
 
 const statusColor = {
     "overdue": "bg-red-600",
@@ -11,12 +13,15 @@ const statusColor = {
     "on-track": "bg-green-800"
 }
 
+
+
 const FriendsDetails = () => {
     const friends = useLoaderData();
     const { id } = useParams();
     const expectedFriend = friends.find(friend => friend.id === Number(id));
+    const { handleTimeline } = useContext(FriendContext);
     return (
-        <div className='container mx-auto flex gap-6 my-20'>
+        <div className='max-w-5xl mx-auto flex gap-6 my-20'>
 
             {/* Left Column — Friend Info Card: */}
             <div className=''>
@@ -43,16 +48,16 @@ const FriendsDetails = () => {
             {/* Right Column — 3 sections: */}
             <div className=' flex flex-col gap-6'>
                 <div className='grid grid-cols-3 gap-4'>
-                    <div className='w-58 h-auto p-8 shadow-sm rounded-sm text-center space-y-3'>
-                        <h1 className='text-[28px] font-semibold'>{expectedFriend.days_since_contact}</h1>
+                    <div className='w-52 h-auto p-8 shadow-sm rounded-sm text-center space-y-3'>
+                        <h1 className='text-[24px] font-semibold'>{expectedFriend.days_since_contact}</h1>
                         <p className='text-[#64748B]'>Days since contact</p>
                     </div>
-                    <div className='w-58 h-auto p-8 shadow-sm rounded-sm text-center space-y-3'>
-                        <h1 className='text-[28px] font-semibold'>{expectedFriend.goal}</h1>
+                    <div className='w-52 h-auto p-8 shadow-sm rounded-sm text-center space-y-3'>
+                        <h1 className='text-[24px] font-semibold'>{expectedFriend.goal}</h1>
                         <p className='text-[#64748B]'>Goals (Days)</p>
                     </div>
-                    <div className='w-58 h-auto p-8 shadow-sm rounded-sm text-center space-y-3'>
-                        <h1 className='text-[28px] font-semibold'>{expectedFriend.next_due_date}</h1>
+                    <div className='w-52 h-auto p-8 shadow-sm rounded-sm text-center space-y-3'>
+                        <h1 className='text-[24px] font-semibold'>{expectedFriend.next_due_date}</h1>
                         <p className='text-[#64748B]'>Next Due</p>
                     </div>
                 </div>
@@ -69,21 +74,21 @@ const FriendsDetails = () => {
                 <div className='w-full  p-6 shadow-sm rounded-sm space-y-3 '>
                     <p>Quick Check-In</p>
                     <div className='flex justify-between' >
-                        <div className='w-54 h-24 bg-[#F8FAFC] border border-[#E9E9E9] rounded-xl flex flex-col justify-center items-center '>
-
-                            <FiPhoneCall className='text-[32px]' />
-                            <p>Call</p>
+                        <div onClick={() => handleTimeline({ expectedFriend },"Call")} className='btn w-48 h-24 bg-[#F8FAFC] border border-[#E9E9E9] rounded-xl flex flex-col justify-center items-center '>
+     
+                                <FiPhoneCall className='text-[32px]' />
+                                <p>Call</p>
 
                         </div>
-                      
-                        <div className='w-54 h-24 bg-[#F8FAFC] border border-[#E9E9E9] rounded-xl flex flex-col justify-center items-center '>
+
+                        <div onClick={() => handleTimeline({ expectedFriend },"Text")} className='btn w-48 h-24 bg-[#F8FAFC] border border-[#E9E9E9] rounded-xl flex flex-col justify-center items-center '>
 
                             <PiChatTextBold className='text-[32px]' />
                             <p>Text</p>
 
                         </div>
 
-                          <div className='w-54 h-24 bg-[#F8FAFC] border border-[#E9E9E9] rounded-xl flex flex-col justify-center items-center '>
+                        <div onClick={() => handleTimeline({ expectedFriend },"Video")} className='btn w-48 h-24 bg-[#F8FAFC] border border-[#E9E9E9] rounded-xl flex flex-col justify-center items-center '>
 
                             <LuVideo className='text-[32px]' />
                             <p>Video</p>

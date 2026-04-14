@@ -1,35 +1,36 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { createBrowserRouter,RouterProvider } from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router";
 import './index.css'
 import HomePage from './pages/HomePage';
 import TimeLinePage from './pages/TimeLinePage';
 import StatsPage from './pages/StatsPage';
 import RootPage from './pages/RootPage';
 import FriendsDetails from './component/FriendsDetails/FriendsDetails';
+import FriendProvider from './context/FriendProvider';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootPage></RootPage>,
-    children:[
+    children: [
       {
-        index:true,
-        element:<HomePage></HomePage>
+        index: true,
+        element: <HomePage></HomePage>
       },
       {
-        path:"/friendsDetails/:id",
-        element:<FriendsDetails></FriendsDetails>,
-        loader:()=> fetch('/friendsData.json'),
+        path: "/friendsDetails/:id",
+        element: <FriendsDetails></FriendsDetails>,
+        loader: () => fetch('/friendsData.json'),
       },
       {
-        path:'/timeline',
-        element:<TimeLinePage></TimeLinePage>
+        path: '/timeline',
+        element: <TimeLinePage></TimeLinePage>
       },
       {
-        path:'/stats',
-        element:<StatsPage></StatsPage>
+        path: '/stats',
+        element: <StatsPage></StatsPage>
       }
     ]
   },
@@ -37,6 +38,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <FriendProvider>
       <RouterProvider router={router}></RouterProvider>
+    </FriendProvider>
   </StrictMode>,
 )

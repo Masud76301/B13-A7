@@ -5,7 +5,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 const Footer = () => {
     return (
         <div className='h-105 bg-[#244D3F] text-white text-center pt-20 mt-20'>
-            <div className='container mx-auto'>
+            <div className='max-w-5xl mx-auto'>
 
                 <div className='space-y-5'>
                     <h1 className='text-6xl font-extrabold'>KeenKeeper</h1>

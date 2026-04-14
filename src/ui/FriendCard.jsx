@@ -8,7 +8,7 @@ const statusColor = {
 
 const FriendCard = ({friend}) => {
     return (
-        <Link to={`/friendsDetails/${friend.id}`} className='w-66 h-66 shadow-sm flex flex-col justify-center items-center py-6 rounded-sm space-y-2'>
+        <Link to={`/friendsDetails/${friend.id}`} className='w-60 h-60 shadow-sm flex flex-col justify-center items-center py-6 rounded-sm space-y-2'>
             <img src={friend.picture} className='w-20 rounded-full'  alt="" />
             <h1 className='mt-3 text-[20px] font-semibold'>{friend.name}</h1>
             <p className='text-[12px] text-[#64748B]'>{friend.days_since_contact}d ago</p>
