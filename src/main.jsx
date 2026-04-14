@@ -8,6 +8,7 @@ import StatsPage from './pages/StatsPage';
 import RootPage from './pages/RootPage';
 import FriendsDetails from './component/FriendsDetails/FriendsDetails';
 import FriendProvider from './context/FriendProvider';
+import ErrorPage from './pages/ErrorPage';
 
 
 const router = createBrowserRouter([
@@ -32,8 +33,13 @@ const router = createBrowserRouter([
         path: '/stats',
         element: <StatsPage></StatsPage>
       }
-    ]
+    ],
+    errorElement:<ErrorPage></ErrorPage>
   },
+  {
+
+    
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(
