@@ -9,11 +9,11 @@ const StatsPage = () => {
 
     const { timeLine } = useContext(FriendContext);
 
-    const totalCall = timeLine.filter(line=> line.actionType === "Call");
-    const totalText = timeLine.filter(line=> line.actionType === "Text");
-    const totalVideo = timeLine.filter(line=> line.actionType === "Video");
+    const totalCall = timeLine.filter(line => line.actionType === "Call");
+    const totalText = timeLine.filter(line => line.actionType === "Text");
+    const totalVideo = timeLine.filter(line => line.actionType === "Video");
 
-    console.log(totalCall.length,totalText.length,totalVideo.length);
+    console.log(totalCall.length, totalText.length, totalVideo.length);
 
     const data = [
         { name: 'Call', value: totalCall.length, fill: '#0088FE' },
@@ -23,23 +23,27 @@ const StatsPage = () => {
     return (
         <div className=' max-w-5xl mx-auto mt-20 space-y-6'>
             <h1 className='text-5xl font-bold '>Friendship Analytics</h1>
-            <div className='flex justify-center shadow p-8 items-center'>
-                <PieChart  style={{ width: '100%', maxWidth: '400px', maxHeight: '60vh', aspectRatio: 1 }} responsive>
-                    <Pie
-                        data={data}
-                        innerRadius="80%"
-                        outerRadius="100%"
-                        // Corner radius is the rounded edge of each pie slice
-                        cornerRadius="50%"
-                        fill="#8884d8"
-                        // padding angle is the gap between each pie slice
-                        paddingAngle={5}
-                        dataKey="value"
-                        isAnimationActive={true}
-                    />
-                    <Legend></Legend>
-                    <Tooltip></Tooltip>
-                </PieChart>
+            <div className=' shadow p-8 '>
+                <h1>By Interaction Type</h1>
+                <div className='flex justify-center items-center'>
+                    <PieChart style={{ width: '100%', maxWidth: '350px', maxHeight: '250px', aspectRatio: 1 }} responsive>
+                        <Pie
+                            data={data}
+                            innerRadius="80%"
+                            outerRadius="100%"
+                            // Corner radius is the rounded edge of each pie slice
+                            cornerRadius="10%"
+                            fill="#8884d8"
+                            // padding angle is the gap between each pie slice
+                            paddingAngle={5}
+                            dataKey="value"
+                            isAnimationActive={true}
+                        />
+                        <Legend></Legend>
+                        <Tooltip></Tooltip>
+                    </PieChart>
+                </div>
+
             </div>
 
         </div>

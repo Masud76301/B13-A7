@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FriendContext } from './FriendContext';
+import { toast } from 'react-toastify';
 
 
 
@@ -7,6 +8,8 @@ const FriendProvider = ({ children }) => {
     const [timeLine, setTimeLine] = useState([]);
 
     const handleTimeline = ({ expectedFriend }, actionType) => {
+        toast.success(`${actionType} with ${expectedFriend.name}`,{
+position: "top-center"});
         const currentDate = new Date().toLocaleDateString("en-US", {
             year: "numeric",
             month: "long",
@@ -24,6 +27,7 @@ const FriendProvider = ({ children }) => {
         setTimeLine,
         handleTimeline,
     }
+    
     return <FriendContext.Provider value={data}>{children}</FriendContext.Provider>;
 };
 
