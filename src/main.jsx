@@ -37,10 +37,6 @@ const router = createBrowserRouter([
     ],
     errorElement:<ErrorPage></ErrorPage>
   },
-  {
-
-    
-  }
 ]);
 
 createRoot(document.getElementById('root')).render(

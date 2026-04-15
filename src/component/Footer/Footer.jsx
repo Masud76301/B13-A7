@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import { FaSquareXTwitter } from "react-icons/fa6";
+import logoXl from "../../assets/logo-xl.png"; 
 
 const Footer = () => {
     return (
@@ -8,10 +9,10 @@ const Footer = () => {
             <div className='max-w-5xl mx-auto'>
 
                 <div className='space-y-5'>
-                    <h1 className='text-6xl font-extrabold'>KeenKeeper</h1>
+                    <img className='mx-auto w-100' src={logoXl} alt="" />
                     <p className='opacity-80'>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
                     <p className='text-[20px] font-medium'>Social Links</p>
-                    <div className='flex justify-center gap-2'>
+                    <div className='flex justify-center gap-4'>
                         <FaInstagram className='text-[40px]'></FaInstagram>
                         <FaFacebook className='text-[40px]'></FaFacebook>
                         <FaSquareXTwitter className='text-[40px]'></FaSquareXTwitter>

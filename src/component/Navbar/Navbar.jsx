@@ -1,15 +1,16 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router';
+import { NavLink } from 'react-router';
 import { FaHome } from "react-icons/fa";
 import { RiTimeLine } from "react-icons/ri";
 import { BiStats } from "react-icons/bi";
+import logo from "../../assets/logo.png";
 
 const Navbar = () => {
     return (
         <div className='bg-base-100 shadow-sm'>
             <div className="navbar container mx-auto ">
                 <div className="flex-1">
-                    <a className="btn btn-ghost text-xl">KeenKeeper</a>
+                    <img src={logo} alt="" />
                 </div>
                 <div className="flex-none">
                     <ul className="flex gap-2 items-center">
