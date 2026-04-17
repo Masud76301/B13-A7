@@ -8,8 +8,8 @@ import logo from "../../assets/logo.png";
 const Navbar = () => {
     return (
         <div className='bg-base-100 shadow-sm'>
-            <div className="navbar container mx-auto ">
-                <div className="flex-1">
+            <div className="w-[90vw] md:container mx-auto flex flex-col md:flex-row justify-center  md:justify-between md:items-center p-3">
+                <div className="justify-content ">
                     <img src={logo} alt="" />
                 </div>
                 <div className="flex-none">

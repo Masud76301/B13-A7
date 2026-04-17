@@ -5,28 +5,28 @@ import logoXl from "../../assets/logo-xl.png";
 
 const Footer = () => {
     return (
-        <div className='h-105 bg-[#244D3F] text-white text-center pt-20 mt-20'>
-            <div className='max-w-5xl mx-auto'>
+        <div className=' h-auto lg:h-105 bg-[#244D3F] text-white text-center pt-20 mt-20'>
+            <div className='max-w-[90vw] md:max-w-5xl mx-auto'>
 
                 <div className='space-y-5'>
-                    <img className='mx-auto w-100' src={logoXl} alt="" />
-                    <p className='opacity-80'>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
-                    <p className='text-[20px] font-medium'>Social Links</p>
+                    <img className='mx-auto w-50 md:w-100' src={logoXl} alt="" />
+                    <p className='opacity-80 text-[12px] md:text-[16px]'>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
+                    <p className='text-[18px] md:ext-[20px] font-medium'>Social Links</p>
                     <div className='flex justify-center gap-4'>
-                        <FaInstagram className='text-[40px]'></FaInstagram>
-                        <FaFacebook className='text-[40px]'></FaFacebook>
-                        <FaSquareXTwitter className='text-[40px]'></FaSquareXTwitter>
+                        <FaInstagram className='text-[30px] md:text-[40px]'></FaInstagram>
+                        <FaFacebook className='text-[30px] md:text-[40px]'></FaFacebook>
+                        <FaSquareXTwitter className='text-[30px] md:text-[40px]'></FaSquareXTwitter>
                     </div>
                 </div>
 
                 <hr className='opacity-20 h-px mt-10 '></hr> 
 
-                <div className='opacity-50 flex justify-between py-8'>
-                    <h1>© 2026 KeenKeeper. All rights reserved.</h1>
-                    <ul className='flex gap-8'>
-                        <li>Privacy Policy</li>
-                        <li>Terms of Service</li>
-                        <li>Cookies</li>
+                <div className='opacity-50 md:flex md:justify-between py-2 md:py-8'>
+                    <h1 className='text-[12px] md:text-[16px]'>© 2026 KeenKeeper. All rights reserved.</h1>
+                    <ul className='flex justify-center gap-2 md:gap-8'>
+                        <li className='text-[10px] md:text-[16px]'>Privacy Policy</li>
+                        <li className='text-[10px] md:text-[16px]'>Terms of Service</li>
+                        <li className='text-[10px] md:text-[16px]'>Cookies</li>
                     </ul>
 
                 </div>
