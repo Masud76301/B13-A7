@@ -15,7 +15,7 @@ const HomePage = () => {
             setTimeout(() => {
                 setFriends(data);
                 setLoading(false);
-            }, 1500);
+            }, 500);
 
         }
         fetchData();

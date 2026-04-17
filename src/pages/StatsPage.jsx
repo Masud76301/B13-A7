@@ -21,12 +21,12 @@ const StatsPage = () => {
         { name: 'Video', value: totalVideo.length, fill: '#FFBB28' },
     ];
     return (
-        <div className=' max-w-5xl mx-auto mt-20 space-y-6'>
-            <h1 className='text-5xl font-bold '>Friendship Analytics</h1>
-            <div className=' shadow p-8 '>
+        <div className=' max-w-[90vw] md:max-w-2xl lg:max-w-5xl mx-auto mt-20 space-y-6'>
+            <h1 className=' text-3xl md:text-4xl lg:text-5xl text-center lg:text-left font-bold '>Friendship Analytics</h1>
+            <div className='  shadow p-6 md:p-8 '>
                 <h1>By Interaction Type</h1>
                 <div className='flex justify-center items-center'>
-                    <PieChart style={{ width: '100%', maxWidth: '350px', maxHeight: '250px', aspectRatio: 1 }} responsive>
+                    <PieChart style={{ width: '100%', maxWidth: '350px', maxHeight: '410px', aspectRatio: 1 }} responsive>
                         <Pie
                             data={data}
                             innerRadius="80%"

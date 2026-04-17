@@ -30,10 +30,10 @@ const TimeLinePage = () => {
     console.log(filterTimeLine);
 
     return (
-        <div className='max-w-5xl mx-auto space-y-6 mt-20'>
+        <div className='w-[90vw] md:max-w-3xl lg:max-w-5xl mx-auto space-y-6 mt-20'>
             <h1 className='text-5xl font-bold'>Timeline</h1>
 
-            <select defaultValue="All" className="select select-neutral" onChange={e => handleFilter(e.target.value)}>
+            <select defaultValue="All" className="w-[90vw]  md:w-85 select select-neutral" onChange={e => handleFilter(e.target.value)}>
                 <option>All</option>
                 <option>Call</option>
                 <option>Text</option>
@@ -44,10 +44,10 @@ const TimeLinePage = () => {
 
             <div className='space-y-4'>
                 {
-                    filterTimeLine.map((line, ind) => <div key={ind} className='border border-[#E9E9E9] rounded-md h-19 flex items-center p-4 space-x-2'>
-                        <img src={actionIcons[line.actionType]} className='w-8' alt="" />
+                    filterTimeLine.map((line, ind) => <div key={ind} className='border border-[#E9E9E9] w-[90vw] md:w-full rounded-md h-19 flex items-center p-4 space-x-2'>
+                        <img src={actionIcons[line.actionType]} className='w-7 md:w-8' alt="" />
                         <div>
-                            <h1 className='text-[#64748B] text-[18px]'><span className='text-[#244D3F] text-[20px] font-medium'>{line.actionType}</span> with {line.name}</h1>
+                            <h1 className='text-[#64748B] text-[14px] md:text-[18px]'><span className='text-[#244D3F] text-[16px] md:text-[20px] font-medium'>{line.actionType}</span> with {line.name}</h1>
                             <p className='text-[16px] text-[#64748B] font-medium'>{line.currentDate}</p>
                         </div>
                     </div>)
